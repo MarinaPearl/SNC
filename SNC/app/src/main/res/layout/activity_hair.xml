@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start"
+    tools:context=".view.Hair">
+<ScrollView
+    android:id="@+id/scroll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="ExtraText,ScrollViewCount,UselessParent"
+    android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="247dp"
+                android:layout_height="143dp"
+                android:src="@drawable/hair"
+                android:layout_marginStart="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                android:text="Опишите ваши волосы"
+                android:textColor="@color/black" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="20dp">
+
+                <RadioButton
+                    android:id="@+id/Description1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Пористые или кудрявые. Выглядят суховато."
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/Description2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="У меня полный набор: жирные у корней, сухие на кончиках, да еще и секутся."
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/Description3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Тонкие или нормальные. Блестят и не доставляют особых проблем."
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textViewTips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Бывает ли у вас перхоть?"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupDandruff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="20dp">
+
+                <RadioButton
+                    android:id="@+id/dandruffYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Есть перхоть"
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/dandruffNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Нет перхоти"
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/dandruffNoYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Иногда бывает перхоть."
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textViewCurls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Кудрявые ли волосы?"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupСurls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="20dp">
+
+                <RadioButton
+                    android:id="@+id/curlsYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Кудрявые"
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/curlsNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Прямые"
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textViewLoss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Выпадают ли волосы?"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupLoss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="20dp">
+
+                <RadioButton
+                    android:id="@+id/LossYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Волосы выпдают."
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+                <RadioButton
+                    android:id="@+id/curlsNo3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Не выпадают"
+                    android:textColor="@color/black"
+                    android:theme="@style/MyRadioButton" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Button"
+                android:layout_marginStart="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        </LinearLayout>
+
+</ScrollView>
+</LinearLayout>
