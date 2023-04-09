@@ -3,6 +3,7 @@ package ru.demchuk.snc.view
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.lifecycle.Observer
@@ -47,11 +48,17 @@ class Hair : Activity() {
                 listAnswer.add(text.toString())
             }
         }
-        val observer = Observer<String> {
-            runOnUiThread {
 
-            }
-        }
-        vm.liveData.observeForever(observer)
+//        val observer = Observer<ArrayList<String>> {
+//            runOnUiThread {
+//                Log.d("aaaaaaaaaaaaaaaa", it.toString())
+//            }
+//        }
+//        vm.liveData.observeForever(observer)
+    }
+
+    fun onClickRequestDb(view: View) {
+        //Log.d("ddddddddddddddd", listAnswer.toString())
+        vm.requestProductFromDatabase(listAnswer)
     }
 }
