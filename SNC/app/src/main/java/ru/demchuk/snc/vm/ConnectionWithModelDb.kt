@@ -9,12 +9,11 @@ class ConnectionWithModelDb {
     val liveData = MutableLiveData<ArrayList<String>>()
 
     fun requestProductFromDatabase(listWithInformationFromUser: ArrayList<String>) {
-        val workerWithDb = WorkerWithDb(listWithInformationFromUser, this)
-        workerWithDb.workWithSelect()
-
+        val model = WorkerWithDb(this)
+        model.workWithSelect()
     }
 
     fun receiveListOutView(listAnswer: ArrayList<String>) {
-            liveData.postValue(listAnswer)
+        liveData.postValue(listAnswer)
     }
 }

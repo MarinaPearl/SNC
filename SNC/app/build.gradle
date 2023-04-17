@@ -11,7 +11,7 @@ android {
     }
     defaultConfig {
         applicationId "ru.demchuk.snc"
-        minSdk 24
+        minSdk 29
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -42,8 +42,12 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.8.0'
     //noinspection GradlePath
-    implementation files('D:/SQLdop/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar')
-    implementation fileTree(dir: 'D:\\OracleJDBC', include: ['*.aar', '*.jar'], exclude: [])
+    implementation files('libs\\ojdbc14-1.0.jar')
+    //noinspection GradlePath
+   // implementation files('C:/Users/marin/Downloads/jar_files/ojdbc8-23.2.0.0.jar')
+    //noinspection GradlePath
+    //implementation files('D:/SQLdop/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar')
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

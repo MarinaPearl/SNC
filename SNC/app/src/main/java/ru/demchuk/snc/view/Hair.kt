@@ -1,6 +1,7 @@
 package ru.demchuk.snc.view
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -30,12 +31,12 @@ class Hair : Activity() {
 
         radioGroupCurls.setOnCheckedChangeListener { _, checkedId ->
             findViewById<RadioButton>(checkedId)?.apply {
-                listAnswer.add(text.toString())
+                //listAnswer.add(text.toString())
             }
         }
         radioGroupDandruff.setOnCheckedChangeListener { _, checkedId ->
             findViewById<RadioButton>(checkedId)?.apply {
-                listAnswer.add(text.toString())
+                //listAnswer.add(text.toString())
             }
         }
         radioGroupDescription.setOnCheckedChangeListener { _, checkedId ->
@@ -45,20 +46,25 @@ class Hair : Activity() {
         }
         radioGroupLoss.setOnCheckedChangeListener { _, checkedId ->
             findViewById<RadioButton>(checkedId)?.apply {
-                listAnswer.add(text.toString())
+                //listAnswer.add(text.toString())
             }
         }
-
-//        val observer = Observer<ArrayList<String>> {
-//            runOnUiThread {
-//                Log.d("aaaaaaaaaaaaaaaa", it.toString())
-//            }
-//        }
-//        vm.liveData.observeForever(observer)
+        try {
+            listAnswer.add("gggg")
+            val observer = Observer<ArrayList<String>> {
+                runOnUiThread {
+                    val intent = Intent(this, ListProduct::class.java)
+                    intent.putStringArrayListExtra("products", it)
+                    startActivity(intent)
+                }
+            }
+            vm.liveData.observeForever(observer)
+        }catch (error : Exception) {
+            println(error.toString())
+        }
     }
 
     fun onClickRequestDb(view: View) {
-        //Log.d("ddddddddddddddd", listAnswer.toString())
         vm.requestProductFromDatabase(listAnswer)
     }
 }

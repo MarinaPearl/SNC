@@ -18,14 +18,13 @@ import java.sql.DriverManager
 
 
 class DatabaseHandler {
-    //lateinit var dbConnection : Connection
 
 
     @JvmName("getDbConnection1")
     fun getDbConnection(): Connection {
         val connectionString = "jdbc:mysql://$dbHost" + ":" +
                 dbPort + "/" + dbName
-        Class.forName("com.mysql.cj.jdbc.Driver")
+        //Class.forName("com.mysql.cj.jdbc.Driver")
         return DriverManager.getConnection(
             connectionString,
             dbUser, dbPass
