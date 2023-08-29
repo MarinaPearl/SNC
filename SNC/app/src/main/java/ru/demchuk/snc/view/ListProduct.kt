@@ -14,8 +14,10 @@ class ListProduct : Activity() {
         setContentView(R.layout.activity_list_product)
         val intent = intent
         val listProductDate = intent.getStringArrayListExtra("products") as ArrayList<String>
+        listProductDate.add("DARLING\n Бальзам для объема волос")
+        val list = listOf(listProductDate[1], listProductDate.last())
         val listView = findViewById<ListView>(R.id.listProductView)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listProductDate)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
         listView.adapter = adapter
     }
 }

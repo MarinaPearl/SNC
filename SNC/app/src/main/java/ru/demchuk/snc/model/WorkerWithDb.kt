@@ -25,7 +25,7 @@ class WorkerWithDb(
                 try {
                     // Locale.setDefault(Locale.ENGLISH);
                     val myConnection: Connection =
-                        DriverManager.getConnection(dbURL, "", "")
+                        DriverManager.getConnection(dbURL, "m.demchuk20207", "faya8sue")
                     val myQuery: Statement = myConnection.createStatement(
                         ResultSet.TYPE_SCROLL_SENSITIVE,
                         ResultSet.CONCUR_UPDATABLE
