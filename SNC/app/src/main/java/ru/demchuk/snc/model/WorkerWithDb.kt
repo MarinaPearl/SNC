@@ -1,13 +1,11 @@
 package ru.demchuk.snc.model
 
-import android.os.AsyncTask
 import android.util.Log
 import ru.demchuk.snc.vm.ConnectionWithModelDb
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.Statement
-import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.concurrent.thread
 
@@ -25,7 +23,7 @@ class WorkerWithDb(
                 try {
                     // Locale.setDefault(Locale.ENGLISH);
                     val myConnection: Connection =
-                        DriverManager.getConnection(dbURL, "m.demchuk20207", "faya8sue")
+                        DriverManager.getConnection(dbURL, "m.demchuk20207", "")
                     val myQuery: Statement = myConnection.createStatement(
                         ResultSet.TYPE_SCROLL_SENSITIVE,
                         ResultSet.CONCUR_UPDATABLE
