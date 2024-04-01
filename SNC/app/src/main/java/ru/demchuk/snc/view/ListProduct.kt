@@ -1,23 +1,31 @@
 package ru.demchuk.snc.view
 
-import android.app.Activity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.platform.ComposeView
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import ru.demchuk.snc.R
+import ru.demchuk.snc.presentation.HairDialogFragment
+import ru.demchuk.snc.presentation.HairFragment
+import ru.demchuk.snc.presentation.ListProduct
+import ru.demchuk.snc.presentation.NavigatorHair
+import ru.demchuk.snc.presentation.viewmodel.ProductViewModel
 
 
-class ListProduct : Activity() {
+class ListProduct : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_list_product)
-        val intent = intent
-        val listProductDate = intent.getStringArrayListExtra("products") as ArrayList<String>
-        listProductDate.add("DARLING\n Бальзам для объема волос")
-        val list = listOf(listProductDate[1], listProductDate.last())
-        val listView = findViewById<ListView>(R.id.listProductView)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
-        listView.adapter = adapter
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.container, HairFragment())
+            .commit();
     }
 }

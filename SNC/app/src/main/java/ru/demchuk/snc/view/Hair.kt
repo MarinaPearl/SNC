@@ -65,6 +65,7 @@ class Hair : Activity() {
     }
 
     fun onClickRequestDb(view: View) {
-        vm.requestProductFromDatabase(listAnswer)
+        val intent = Intent(this, ListProduct::class.java)
+        startActivity(intent)
     }
 }
